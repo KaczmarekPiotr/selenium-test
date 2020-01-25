@@ -19,26 +19,26 @@ public class GetTextTest {
         driver.manage().window().maximize(); //zmaksymalizowanie okna
     }
 
-    /*@Test
+    @Test
     public void TestGetTextFunction() {
         driver.get("https://pl.wikipedia.org/");
         WebElement element = driver.findElement(By.id("main-page-column1"));
         System.out.println(element.getText());
 
-    }*/
+    }
 
-    /*@Test
+    @Test
     public void TestGetTextAttribute() {
         driver.get("https://pl.wikipedia.org/");
         String atrybut = driver.findElement(By.id("main-page-content")).getAttribute("class");
         System.out.println(atrybut);
-    }*/
+    }
 
 
     @After
     public void tearDown() throws Exception {
-        // Zamknij przeglądarkę
-        // driver.quit();
+         //Zamknij przeglądarkę
+         driver.quit();
     }
 
 

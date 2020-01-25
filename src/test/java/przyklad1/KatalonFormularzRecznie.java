@@ -23,35 +23,88 @@ public class KatalonFormularzRecznie {
 
     @Test
     public void testKatalon() {
+
         WebElement firstName = driver.findElement(By.id("first-name"));
-        firstName.clear();
-        firstName.sendKeys("Zenek");
+        if ( firstName.isEnabled()) {
+            firstName.clear();
+            firstName.sendKeys("Zenek");
+            System.out.println("Nazwa pola : " + firstName.getAttribute("name"));
+        } else {
+            Assert.fail();
+        }
+
         WebElement lastName = driver.findElement(By.id("last-name"));
-        lastName.clear();
-        lastName.sendKeys("Martyniuk");
+        if ( lastName.isEnabled()) {
+            lastName.clear();
+            lastName.sendKeys("Martyniuk");
+            System.out.println("Nazwa pola : " + lastName.getAttribute("name"));
+        } else {
+            Assert.fail();
+        }
+
         List<WebElement> gender = driver.findElements(By.name("gender"));
-        gender.get(0).click();
+        if ( gender.isEmpty()) {
+            gender.get(0).click();
+        } else {
+            gender.get(0).click();
+        }
+
         WebElement date = driver.findElement(By.id("dob"));
-        date.clear();
-        date.sendKeys("05/22/2010");
+        if ( date.isEnabled()) {
+            date.clear();
+            date.sendKeys("05/22/2010");
+            System.out.println("Nazwa pola : " + date.getAttribute("name"));
+        } else {
+            Assert.fail();
+        }
+
         WebElement address = driver.findElement(By.name("address"));
-        address.clear();
-        address.sendKeys("Prosta 51");
+        if ( address.isEnabled()) {
+            address.clear();
+            address.sendKeys("Prosta 51");
+            System.out.println("Nazwa pola : " + address.getAttribute("name"));
+        } else {
+            Assert.fail();
+        }
+
         WebElement email = driver.findElement(By.id("email"));
-        email.clear();
-        email.sendKeys("zenek.martyniuk@mailinator.com");
+        if ( email.isEnabled()) {
+            email.clear();
+            email.sendKeys("zenek.martyniuk@mailinator.com");
+            System.out.println("Nazwa pola : " + email.getAttribute("name"));
+        } else {
+            Assert.fail();
+        }
+
         WebElement password = driver.findElement(By.id("password"));
-        password.clear();
-        password.sendKeys("Pass123");
+        if ( password.isEnabled()) {
+            password.clear();
+            password.sendKeys("Pass123");
+            System.out.println("Nazwa pola : " + password.getAttribute("name"));
+        } else {
+            Assert.fail();
+        }
+
         WebElement company = driver.findElement(By.id("company"));
-        company.clear();
-        company.sendKeys("Coders Lab");
+        if ( company.isEnabled()) {
+            company.clear();
+            company.sendKeys("Coders Lab");
+            System.out.println("Nazwa pola : " + company.getAttribute("name"));
+        } else {
+            Assert.fail();
+        }
+
         WebElement comment = driver.findElement(By.id("comment"));
-        comment.clear();
-        comment.sendKeys("Oddawaj piniondze za las");
+        if ( comment.isEnabled()) {
+            comment.clear();
+            comment.sendKeys("Oddawaj piniondze za las");
+            System.out.println("Nazwa pola : " + comment.getAttribute("name"));
+        } else {
+            Assert.fail();
+        }
+
         WebElement submit = driver.findElement(By.id("submit"));
         submit.click();
-
 
 
     }
